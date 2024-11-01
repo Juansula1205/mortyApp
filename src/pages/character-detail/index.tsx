@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CustomCard from "../../components/custom-card";
-import { getCharacterById } from "../home";
 import { useParams } from "react-router-dom";
+import { getCharacterById } from "../../api/functions";
 export type CharacterType = {
   id: string;
   name: string;
