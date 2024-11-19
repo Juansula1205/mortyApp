@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import CustomCard from "../../components/custom-card";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getCharacterById } from "../../api/functions";
+import { Button } from "../../components/ui/button";
+import { MdArrowBackIos } from "react-icons/md";
 export type CharacterType = {
   id: string;
   name: string;
@@ -11,6 +13,10 @@ export type CharacterType = {
 const CharacterDetail = () => {
   const { id } = useParams();
   const [characterData, setcharacterData] = useState<CharacterType>();
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate("../");
+  };
   console.log(id);
   useEffect(() => {
     getCharacterById(id).then((res) => {
@@ -20,6 +26,9 @@ const CharacterDetail = () => {
 
   return (
     <div>
+      <Button onClick={handleBack}>
+        <MdArrowBackIos />
+      </Button>
       <CustomCard data={characterData} />
     </div>
   );

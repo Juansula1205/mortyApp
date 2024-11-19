@@ -7,7 +7,7 @@ import CharacterDetail from "./pages/character-detail";
 
 function App() {
   return (
-    <div className="w-10/12 h-screen mx-auto bg-slate-700 py-4">
+    <div className="w-screen h-screen mx-auto py-4">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
