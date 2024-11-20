@@ -20,12 +20,12 @@ import { Button } from "./ui/button";
       };
   return (
     <>
-    <div className='flex mx-auto'>
-    <Button variant="outline" size="icon" onClick={handlePrev}>
+    <div className='flex mx-auto my-2'>
+    <Button  size="icon" onClick={handlePrev} className="bg-slate-900 text-white">
       <ChevronLeft className="h-4 w-4" />
     </Button>
-    <p>{totalPages}</p>
-    <Button variant="outline" size="icon" onClick={handleNext}>
+    <p className="p-2 h-10 text-center w-8 bg-slate-900 text-white rounded-sm mx-2 border border-black ">{totalPages}</p>
+    <Button size="icon" className="bg-slate-900 text-white" onClick={handleNext}>
       <ChevronRight className="h-4 w-4" />
     </Button>
   </div>
