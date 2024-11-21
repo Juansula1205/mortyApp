@@ -9,6 +9,7 @@ export type CharacterType = {
   name: string;
   species: string;
   image: string;
+  url?: string;
 };
 const CharacterDetail = () => {
   const { id } = useParams();
