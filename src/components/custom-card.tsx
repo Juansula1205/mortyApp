@@ -1,35 +1,16 @@
 import { CharacterType } from "../pages/character-detail";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card } from "./ui/card";
 
 const CustomCard = ({ data }: { data: CharacterType | undefined }) => {
   return (
-    <div className="w-[350px] sm:w-[420px] mx-auto">
-      <Card className="bg-gradient-to-r from-cyan-500 to-blue-500">
-        <CardHeader>
-          <CardTitle className="mx-auto text-purple-950">
-            {data?.name}
-          </CardTitle>
-          <CardDescription className="text-1xl text-[black]  mx-auto">
-            {data?.name}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <img
-            src={data?.image}
-            className="rounded-xl mx-auto w-[320px]"
-            alt=""
-          />
-        </CardContent>
-        <CardFooter>
-          <p className="mx-auto text-1xl">Especie: {data?.species}</p>
-        </CardFooter>
+    <div className="relative w-[350px] sm:w-[420px] mx-auto hover:scale-105 cursor-pointer transition">
+      <Card className="bg-gradient-to-r from-cyan-500 to-blue-500 overflow-hidden">
+        <img src={data?.image} className="mx-auto w-full" alt="" />
+
+        <p className=" text-white z-10 absolute bottom-3 left-4 font-semibold">
+          {data?.name}
+        </p>
+        <div className="absolute inset-0 w-full h-full bg-gradient rounded-md"></div>
       </Card>
     </div>
   );

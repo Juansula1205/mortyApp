@@ -5,7 +5,6 @@ import CustomCard from "../../components/custom-card";
 //   {id:3,name:"Metroo",description:"Criado en St. Louis, Wayne comenzó una carrera de producción en la escuela secundaria y se hizo más conocido por sus exitosas grabaciones con artistas de rap de Atlanta como Future, 21 Savage, Gucci Mane y Migos a mediados de la década de 2010.",url:"/metro.jpg",footer:"Overdue"}]
 
 import ButtonBar from "../../components/ButtonBar";
-import { Link } from "react-router-dom";
 import { getCharacters } from "../../api/functions";
 import { CharacterType } from "../character-detail";
 
@@ -24,9 +23,9 @@ const Home = () => {
       <ButtonBar currentPage={paginaActual} setCurrentPage={setPaginaActual} />
       <div className="flex flex-col justify-center sm:flex-row gap-4 sm:flex-wrap sm:w-10/12 mx-auto">
         {personajes?.map((x) => (
-          <Link to={`/character-detail/${x.id}`} key={x.id}>
+          <div className="relative" key={x.id}>
             <CustomCard data={x} />
-          </Link>
+          </div>
         ))}
       </div>
       <ButtonBar currentPage={paginaActual} setCurrentPage={setPaginaActual} />
